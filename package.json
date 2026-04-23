@@ -1,0 +1,108 @@
+{
+  "name": "sentinel-security-suite",
+  "version": "2.0.0",
+  "description": "Enterprise-grade security suite with multi-layer protection, network scanning, and intrusion detection",
+  "main": "electron-main-windows-enhanced.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-windows": "electron electron-main-windows-enhanced.js",
+    "electron-windows-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && npm run electron-windows\"",
+    "electron-build": "npm run build && electron-builder",
+    "electron-build-windows": "npm run build && electron-builder --win --publish never",
+    "electron-pack": "electron-builder --dir",
+    "preelectron-build": "npm run build"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.4",
+    "electron-devtools-installer": "^3.2.0",
+    "react-scripts": "5.0.1",
+    "wait-on": "^7.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.sentinel.security",
+    "productName": "Sentinel Security Suite",
+    "files": [
+      "build/**/*",
+      "electron-main.js",
+      "electron-main-windows-enhanced.js",
+      "electron-preload.js",
+      "portal-preload.js",
+      "setup-preload.js",
+      "src/engines/**/*",
+      "src/services/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "appimage"
+      ],
+      "category": "Utility",
+      "maintainer": "Sentinel Development Team",
+      "synopsis": "Enterprise Security Suite"
+    },
+    "deb": {
+      "depends": [
+        "gconf2",
+        "gconf2-common",
+        "libappindicator1",
+        "libnotify4",
+        "libxtst6",
+        "xdg-utils",
+        "libsecret-1-0",
+        "nmap",
+        "suricata",
+        "nikto",
+        "zaproxy"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Sentinel Development Team",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "firewall",
+    "intrusion-detection",
+    "vulnerability-scanner",
+    "network-security",
+    "kali-linux"
+  ]
+}
