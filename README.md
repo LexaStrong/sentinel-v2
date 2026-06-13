@@ -136,8 +136,7 @@ Layer 3: Recovery Passphrases (2 hardcoded options)
 ### Recovery Passphrases (Store Securely!)
 
 ```
-Passcode 1: 4884275725808017
-Passcode 2: !@mL3x@str0ng
+
 ```
 
 **⚠️ IMPORTANT:** Store these in a secure location. They bypass PIN/MFA and account lockout. Never commit to version control.
